@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'style.css') }}" type= "text/css"/>
+    </head>
+    <body>
+        <!-- Navigation bar--> 
+        <nav class="navbar">
+        <div class="logo">Custom Keyboards</div>
+        <ul class="navlinks">
+            <div class="menu">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li class="guides">
+                    <a href="{{ url_for('guides') }}">Guides</a>
+                    <ul class="dropdown">
+                        <li><a href="{{ url_for('gettingStarted') }}">Getting Started</a></li>
+                        <li><a href="{{ url_for('layouts') }}">Layouts</a></li>
+                        <li><a href="{{ url_for('parts') }}">Parts of a Keyboard</a></li>
+                        <li><a href="{{ url_for('switches') }}">Switches</a></li>
+                        <li><a href="{{ url_for('modifications') }}">Extra Modifications</a></li>
+                    </ul>
+                </li>
+                
+                <li class="builds">
+                    <a href="{{ url_for('builds') }}">Builds</a>
+                    <ul class="dropdown">
+                        <li><a href="{{ url_for('sample') }}">Sample Build</a></li>
+                        <li><a href="{{ url_for('create') }}">Create a Build</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{ url_for('productSearch') }}">Product Search</a></li>
+            </div>
+        </ul>
+        </nav>
+
+        <!-- Page content -->
+        <div class="body">
+            <h1>Build Guides</h1>
+            <ul class="guideList">
+                <li><a class="guideListEl" href="{{ url_for('gettingStarted') }}">Getting Started</a></li>
+                <li><a class="guideListEl" href="{{ url_for('layouts') }}">Layouts</a></li>
+                <li><a class="guideListEl" href="{{ url_for('parts') }}">Parts of a Keyboard</a></li>
+                <li><a  class="guideListEl" href="{{ url_for('switches') }}">Switches</a></li>
+                <li><a  class="guideListElj3nnp" href="{{ url_for('modifications') }}">Extra Modifications</a></li>
+            </ul>
+        </div>
+    </body>
+</html>

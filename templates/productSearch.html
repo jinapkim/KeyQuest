@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'style.css') }}" type= "text/css"/>
+    </head>
+    <body>
+        <!-- Navigation bar--> 
+        <nav class="navbar">
+        <div class="logo">Custom Keyboards</div>
+        <ul class="navlinks">
+            <div class="menu">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li class="guides">
+                    <a href="{{ url_for('guides') }}">Guides</a>
+                    <ul class="dropdown">
+                        <li><a href="{{ url_for('gettingStarted') }}">Getting Started</a></li>
+                        <li><a href="{{ url_for('layouts') }}">Layouts</a></li>
+                        <li><a href="{{ url_for('parts') }}">Parts of a Keyboard</a></li>
+                        <li><a href="{{ url_for('switches') }}">Switches</a></li>
+                        <li><a href="{{ url_for('modifications') }}">Extra Modifications</a></li>
+                    </ul>
+                </li>
+                
+                <li class="builds">
+                    <a href="{{ url_for('builds') }}">Builds</a>
+                    <ul class="dropdown">
+                        <li><a href="{{ url_for('sample') }}">Sample Build</a></li>
+                        <li><a href="{{ url_for('create') }}">Create a Build</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{ url_for('productSearch') }}">Product Search</a></li>
+            </div>
+        </ul>
+        </nav>
+
+        <!-- Page content -->
+        <div class="body">
+            <h1>Product Search</h1>
+            <p>Find current prices online</p>
+                <!-- Search bar -->
+                <form class="searchForm" name="search" method="GET">
+                    <fieldset>
+                       <input type="text" name="product" placeholder="Search..." required>
+                       <input class="button" type="submit" name="search" value="Submit">
+                   </fieldset>
+                </form>
+                <br>
+                <br>
+                <!-- product search results -->
+                <table id="product_search_table">
+                    <thead>
+                        <tr>
+                            <th>Thumbnail</th>
+                            <th>Title</th>
+                            <th>Price</th>
+                            <th>Vendor</th>
+                            <th>Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for result in results %}
+                    <tr>
+                        <td><img src = "{{ result['thumbnail'] }}" witdth="150" height="150"></td>
+                        <td>{{ result['title'] }}</td>
+                        <td>{{ result['price'] }}</td>
+                        <td>{{ result['vendor'] }}</td>
+                        <td><a href="{{ result['link'] }}" target="_blank">Link</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+               
+        </div>
+    </body>
+</html>

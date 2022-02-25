@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'style.css') }}" type= "text/css"/>
+    </head>
+    <body>
+        <!-- Navigation bar--> 
+        <nav class="navbar">
+        <div class="logo">Custom Keyboards</div>
+        <ul class="navlinks">
+            <div class="menu">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li class="guides">
+                    <a href="{{ url_for('guides') }}">Guides</a>
+                    <ul class="dropdown">
+                        <li><a href="{{ url_for('gettingStarted') }}">Getting Started</a></li>
+                        <li><a href="{{ url_for('layouts') }}">Layouts</a></li>
+                        <li><a href="{{ url_for('parts') }}">Parts of a Keyboard</a></li>
+                        <li><a href="{{ url_for('switches') }}">Switches</a></li>
+                        <li><a href="{{ url_for('modifications') }}">Extra Modifications</a></li>
+                    </ul>
+                </li>
+                
+                <li class="builds">
+                    <a href="{{ url_for('builds') }}">Builds</a>
+                    <ul class="dropdown">
+                        <li><a href="{{ url_for('sample') }}">Sample Build</a></li>
+                        <li><a href="{{ url_for('create') }}">Create a Build</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{ url_for('productSearch') }}">Product Search</a></li>
+            </div>
+        </ul>
+        </nav>
+
+        <!-- Page content -->
+        <div class="body">
+            <h1>Getting Started</h1>
+            <img src="static\photos\vega.PNG">
+            <p>
+                For many of us, typing is part of daily life. Using a custom keyboard can greatly improve your typing experience and provide extra 
+                functionality. Almost any part of a keyboard can be customized to fit your personal aesthetic, usage, and typing preferences.
+                If you're looking to get started with putting together your own build, here's a short guide to help you out. 
+            </p>
+            <br>
+            <p>
+                There are 5 main components to a keyboard: a case, PBC, plate, switches, and keycaps. The plate and switches have the most effect on how the typing feels and 
+                together all the components will affect the typing sound. 
+            </p>
+            <br>
+            <p>
+                The first thing to think about is what size keyboard you want. Some common layouts are 60%, 65%, TKL, and full size. Depending on what you use your keyboard for, 
+                you can select a layout with more or less keys. If you're the type of person to use dedicated keys or use function keys regularly, you may want a TKL or full size board. 
+                If you prefer to have a more compact keyboard that doesn't take up too much space and like having all keys within easy reach and don't mind using key combinations 
+                for certain things, then you may like a 60% keyboard. 
+            </p>
+            <br>
+            <p>
+                After deciding which layout suits you best, you can choose a case, PCB, and plate combination that fits that layout. For the case and plate, there are 
+                a variety of materials that they can be made out of such as aluminum or polycarbonate. Once those are chosen, you can select the type of switches to fill the board with. 
+                The three main categories of switches are linear, tactile, and clicky. If you find that you tend to accidentally press keys easily you may want a heavier weighted
+                switch, or if you more responsiveness for something like gaming you may want a lighter linear switch. 
+            </p>
+            <br>
+            <p>
+                Choosing keycaps really allows you to be creative with how your keyboard looks. There are many different designs and profiles available to choose from. 
+                Some keysets are colorful and have accented keys with a pop of color, and some are very simple and clean looking. If your keyboard has RGB lighting, you 
+                could use keycaps that have shine-through legends to allow light to come through the keycaps. 
+            </p>
+            <br>
+            <br>
+        </div>
+    </body>
+</html>

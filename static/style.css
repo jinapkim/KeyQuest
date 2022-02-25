@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: cursive;
+}
+a {
+    text-decoration: none;
+    margin-left: 20px;
+}
+a.guideLink:hover {
+    border-color:#5b797a;
+    border-radius: 20px;
+    background-color: #5b797a;
+    width: 55px;
+    padding: 10px;
+    color:#fff;
+}
+.menu > li {
+    list-style: none;
+}
+ul.dropdown > li {
+    list-style: none;
+}
+li {
+    list-style-type: disc;
+    text-align: left;
+    display: list-item;
+}
+
+/* Navigation bar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: rgb(248, 251, 252);
+    color: rgb(6, 43, 53);
+}
+.nav-links a {
+    color: rgb(6, 43, 53);
+}
+
+/* Logo */
+.logo {
+    font-size: 32px;
+    font-weight: 900;
+}
+
+/* NAVBAR MENU */
+.menu {
+    display: flex;
+    gap: 1em;
+    font-size: 18px;
+}
+.menu li:hover {
+    background-color: #8ac7c7;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+.menu li {
+    padding: 5px 14px;
+}
+
+/* DROPDOWN MENU */
+.services {
+    position: relative; 
+}
+.dropdown {
+    background-color: rgb(29, 55, 56);
+    padding: 0.5em 0;
+    position: absolute; 
+    display: none;
+    border-radius: 6px;
+    top: 35px;
+    color: rgb(249, 250, 250);
+}
+.dropdown li {
+    padding: 0.5em 1em;
+    width: 8em;
+    text-align: center;
+    margin-top: 10px;
+}
+.dropdown a{
+    color: rgb(249, 250, 250);
+}
+.dropdown li:hover {
+    background-color: #72cece;
+}
+.guides:hover .dropdown {
+    display: block;
+}
+.builds:hover .dropdown {
+    display: block;
+}
+
+/* Images */
+.homeImage{
+    max-width: 45%;
+    height: auto;
+    flex-basis: 40%;
+    padding-left: 20px;
+}
+#tofu{
+    width: 30%;
+    margin-left: 30px;
+}
+
+/* Pages */
+.homeText{
+    font-size: 20px;
+    padding-left: 20px;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+h1{
+    font-size: 35px;
+    margin-left: 20px;
+}
+p{
+    margin-left: 20px;
+}
+.body{
+    background-color: #c4e4e4;
+}
+.guideList{
+    margin-top: 40px;
+    margin-left: 30px;
+}
+.guideListEl{
+    font-size: x-large;
+}
+.guideList li + li{
+    margin-top: 20px;
+}
+
+/* Tables */
+td.sample{
+    border-bottom: 2px solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-size: medium;
+}
+td.sample2{
+    border: none;
+}
+table.sampleTable{
+    border: none;
+}
+table{
+    margin-left: 30px;
+    
+}
+table, th, td{
+    border: 2px solid #a6b6c0;
+    border-collapse: collapse;
+    padding:5px;
+    background-color: #fff;
+    text-align: center;
+}
+th{
+    background-color: #5b797a;
+}
+#product_search_table{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Links */
+a.createlink{
+    margin-left: 30px;
+}
+
+/* Button */
+.button{
+  align-items: center;
+  background-clip: padding-box;
+  background-color: #5b797a;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+}
+
+.button:hover,
+.button:focus {
+  background-color: #759d9e;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button:active {
+  background-color: #5b797a;
+  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+  transform: translateY(0);
+}
+
+/* Forms */
+input{
+    border: none;
+    font-size: large;
+}
+fieldset{
+    border: none;
+}
+
+/* Photos */
+img.keyboardPhoto{
+    display: block;
+}
+form.searchForm{
+    font-size: large;
+    text-align: center;
+}
