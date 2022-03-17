@@ -7,10 +7,11 @@
     <body>
         <!-- Navigation bar--> 
         <nav class="navbar">
-        <div class="logo">Custom Keyboards</div>
+        <div class="logo">
+            <a href="{{ url_for('home') }}">Custom Keyboards</a>
+        </div>
         <ul class="navlinks">
             <div class="menu">
-                <li><a href="{{ url_for('home') }}">Home</a></li>
                 <li class="guides">
                     <a href="{{ url_for('guides') }}">Guides</a>
                     <ul class="dropdown">
@@ -25,6 +26,7 @@
                 <li class="builds">
                     <a href="{{ url_for('builds') }}">Builds</a>
                     <ul class="dropdown">
+                        <li><a href="{{ url_for('builds') }}">My Builds</a></li>
                         <li><a href="{{ url_for('sample') }}">Sample Build</a></li>
                         <li><a href="{{ url_for('create') }}">Create a Build</a></li>
                     </ul>
@@ -48,6 +50,7 @@
                 <br>
                 <br>
                 <!-- product search results -->
+                {% if show_results %}
                 <table id="product_search_table">
                     <thead>
                         <tr>
@@ -70,7 +73,12 @@
                     {% endfor %}
                     </tbody>
                 </table>
-               
+                {% endif %}
+
+                <!-- Message if no results found -->
+                {% if no_results %}
+                <p class="search_p">Google hasn't returned any results for this query.</p>
+                {% endif %}
         </div>
     </body>
 </html>

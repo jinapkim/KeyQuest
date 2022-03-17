@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'style.css') }}" type= "text/css"/>
+        <script>
+            function confirmDelete() {
+                let confirmDelete = confirm("Are you sure you want to delete this build?");
+                if (confirmDelete) {
+                    return true;
+                }
+                else {  
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <!-- Navigation bar--> 
+        <nav class="navbar">
+        <div class="logo">
+            <a href="{{ url_for('home') }}">Custom Keyboards</a>
+        </div>
+        <ul class="navlinks">
+            <div class="menu">
+                <li class="guides">
+                    <a href="{{ url_for('guides') }}">Guides</a>
+                    <ul class="dropdown">
+                        <li><a href="{{ url_for('gettingStarted') }}">Getting Started</a></li>
+                        <li><a href="{{ url_for('layouts') }}">Layouts</a></li>
+                        <li><a href="{{ url_for('parts') }}">Parts of a Keyboard</a></li>
+                        <li><a href="{{ url_for('switches') }}">Switches</a></li>
+                        <li><a href="{{ url_for('modifications') }}">Extra Modifications</a></li>
+                    </ul>
+                </li>
+                
+                <li class="builds">
+                    <a href="{{ url_for('builds') }}">Builds</a>
+                    <ul class="dropdown">
+                        <li><a href="{{ url_for('builds') }}">My Builds</a></li>
+                        <li><a href="{{ url_for('sample') }}">Sample Build</a></li>
+                        <li><a href="{{ url_for('create') }}">Create a Build</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{ url_for('productSearch') }}">Product Search</a></li>
+            </div>
+        </ul>
+        </nav>
+
+        <!-- Page Content -->
+        <div class="body">
+            <h1>Switches</h1>
+            <div class="row">
+            <img class="guideImg" src="\static/photos/C3-Equalz-Tangerine-Linear-Mechanical-Keyboard-Switches.jpg">
+            <img class="guideImg" src="\static\photos\holypandas.jpg">
+            <img class="guideImg" src="\static\photos\jadebox.jpg">
+            </div>
+            <p>
+                There are many options out there for switches. They vary in how much force is required to press them down, 
+                how they feel when typed on, the materials they're made of, and how they sound. There are three main types of 
+                switches: linear, tactile, and clicky.
+            </p>
+            <p>
+                Linear switches are smooth throughout the keystroke, while tactile switches have a "bump" to provide some feedback 
+                and additional resistance. Clicky switches have a bump as well but make a prominent click sound. 
+                You can choose a switch based on your preferences, including how light or heavy-handed you are when you type, 
+                how loud or quiet you want your keyboard to be, and what you use your keyboard for the most. 
+            </p>
+        </div>
+    </body>
+</html>

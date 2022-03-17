@@ -7,10 +7,11 @@
     <body>
         <!-- Navigation bar--> 
         <nav class="navbar">
-        <div class="logo">Custom Keyboards</div>
+        <div class="logo">
+            <a href="{{ url_for('home') }}">Custom Keyboards</a>
+        </div>
         <ul class="navlinks">
             <div class="menu">
-                <li><a href="{{ url_for('home') }}">Home</a></li>
                 <li class="guides">
                     <a href="{{ url_for('guides') }}">Guides</a>
                     <ul class="dropdown">
@@ -25,6 +26,7 @@
                 <li class="builds">
                     <a href="{{ url_for('builds') }}">Builds</a>
                     <ul class="dropdown">
+                        <li><a href="{{ url_for('builds') }}">My Builds</a></li>
                         <li><a href="{{ url_for('sample') }}">Sample Build</a></li>
                         <li><a href="{{ url_for('create') }}">Create a Build</a></li>
                     </ul>
@@ -42,7 +44,7 @@
                 <li><a class="guideListEl" href="{{ url_for('layouts') }}">Layouts</a></li>
                 <li><a class="guideListEl" href="{{ url_for('parts') }}">Parts of a Keyboard</a></li>
                 <li><a  class="guideListEl" href="{{ url_for('switches') }}">Switches</a></li>
-                <li><a  class="guideListElj3nnp" href="{{ url_for('modifications') }}">Extra Modifications</a></li>
+                <li><a  class="guideListEl" href="{{ url_for('modifications') }}">Extra Modifications</a></li>
             </ul>
         </div>
     </body>

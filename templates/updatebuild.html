@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'style.css') }}" type= "text/css"/>
+    </head>
+    <body>
+        <!-- Navigation bar--> 
+        <nav class="navbar">
+        <div class="logo">
+            <a href="{{ url_for('home') }}">Custom Keyboards</a>
+        </div>
+        <ul class="navlinks">
+            <div class="menu">
+                <li class="guides">
+                    <a href="{{ url_for('guides') }}">Guides</a>
+                    <ul class="dropdown">
+                        <li><a href="{{ url_for('gettingStarted') }}">Getting Started</a></li>
+                        <li><a href="{{ url_for('layouts') }}">Layouts</a></li>
+                        <li><a href="{{ url_for('parts') }}">Parts of a Keyboard</a></li>
+                        <li><a href="{{ url_for('switches') }}">Switches</a></li>
+                        <li><a href="{{ url_for('modifications') }}">Extra Modifications</a></li>
+                    </ul>
+                </li>
+                
+                <li class="builds">
+                    <a href="{{ url_for('builds') }}">Builds</a>
+                    <ul class="dropdown">
+                        <li><a href="{{ url_for('builds') }}">My Builds</a></li>
+                        <li><a href="{{ url_for('sample') }}">Sample Build</a></li>
+                        <li><a href="{{ url_for('create') }}">Create a Build</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{ url_for('productSearch') }}">Product Search</a></li>
+            </div>
+        </ul>
+        </nav>
+
+        <!-- Page content -->
+        <div class="body">
+            <form method="POST" action="{{ url_for('builds') }}">
+                <fieldset>
+                    <input type="hidden" name="id" value="{{ build[0].buildID }}">
+                    <label for="build_name">Name of build:</label>
+                    <input type="text" name="build_name" pattern="[a-zA-Z0-9_ ]+" value="{{ build[0].buildName }}">
+                    <br>
+                    <label for="case">Case</label>
+                    <select name="case">
+                        {% for case in cases %}
+                        <option value="{{ case.caseID }}" {% if build[0].caseID == case.caseID %} selected {% endif %}>{{ case.caseName }}</option>
+                        {% endfor %}
+                    </select>
+                    <br>
+                    <label for="pcb">PCB</label>
+                    <select name="pcb">
+                        {% for pcb in pcbs %}
+                        <option value="{{ pcb.pcbID }}" {% if build[0].pcbID == pcb.pcbID %} selected {% endif %}>{{ pcb.pcbType }}</option>
+                        {% endfor %}
+                    </select>
+                    <br>
+                    <label for="plate">Plate</label>
+                    <select name="plate">
+                        {% for plate in plates %}
+                        <option value="{{ plate.plateID }}" {% if build[0].plateID == plate.plateID %} selected {% endif %}>{{ plate.material }}</option>
+                        {% endfor %}
+                    </select>
+                    <br>
+                    <label for="switches">Switches</label>
+                    <select name="switches">
+                        {% for switch in switches %}
+                        <option value="{{ switch.switchID }}" {% if build[0].switchID == switch.switchID %} selected {% endif %}>{{ switch.switchName }}</option>
+                        {% endfor %}
+                    </select>
+                    <br>
+                    <label for="keycaps">Keycaps</label>
+                    <select name="keycaps">
+                        {% for keycap in keycaps %}
+                        <option value="{{ keycap.keycapID }}" {% if build[0].keycapID == keycap.keycapID %} selected {% endif %}>{{ keycap.keycapName }}</option>
+                        {% endfor %}
+                    </select>
+                    <br>
+                    <input class="button" type="submit" name="update" value="Submit">
+                </fieldset>
+            </form>
+
+
+        </div>

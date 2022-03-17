@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'style.css') }}" type= "text/css"/>
+        <script>
+            function confirmDelete() {
+                let confirmDelete = confirm("Are you sure you want to delete this build?");
+                if (confirmDelete) {
+                    return true;
+                }
+                else {  
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <!-- Navigation bar--> 
+        <nav class="navbar">
+        <div class="logo">
+            <a href="{{ url_for('home') }}">Custom Keyboards</a>
+        </div>
+        <ul class="navlinks">
+            <div class="menu">
+                <li class="guides">
+                    <a href="{{ url_for('guides') }}">Guides</a>
+                    <ul class="dropdown">
+                        <li><a href="{{ url_for('gettingStarted') }}">Getting Started</a></li>
+                        <li><a href="{{ url_for('layouts') }}">Layouts</a></li>
+                        <li><a href="{{ url_for('parts') }}">Parts of a Keyboard</a></li>
+                        <li><a href="{{ url_for('switches') }}">Switches</a></li>
+                        <li><a href="{{ url_for('modifications') }}">Extra Modifications</a></li>
+                    </ul>
+                </li>
+                
+                <li class="builds">
+                    <a href="{{ url_for('builds') }}">Builds</a>
+                    <ul class="dropdown">
+                        <li><a href="{{ url_for('builds') }}">My Builds</a></li>
+                        <li><a href="{{ url_for('sample') }}">Sample Build</a></li>
+                        <li><a href="{{ url_for('create') }}">Create a Build</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{ url_for('productSearch') }}">Product Search</a></li>
+            </div>
+        </ul>
+        </nav>
+
+        <!-- Page Content -->
+        <div class="body">
+            <img class="guideImg2" src="\static\photos\case.jpg">
+            <p>
+                The case is what hold everything together and protects it from the elements. 
+                You can choose different case materials depending on how durable, aesthetic, or see-through you want your keyboard to be.
+                Common case materials are aluminum or plastic. 
+            </p>
+            <img class="guideImg2" src="\static\photos\pcb.jpg">
+            <p>
+                Keyboard PCB, the heart of the keyboard, is a printed circuit board where switches and everything else fits. The PCB you choose needs to be 
+                compatible with the case you chose. Common things to think about when selecting a PCB are compatibility with mechanical switches and software. 
+                Mechanical switches either have three or five pins, which help the switches sit on top of the PCB. Keep in mind that a PCB that supports 5-pin
+                switches will be compatible with more switches. PCBs can also be compatible with software like QMK or VIA, which allow users to program their keys 
+                and customize their keyboard based on their needs. Software can also be used to control things like RGB lighting.
+            </p>
+            <img class="guideImg2" src="\static\photos\plate.jpg">
+            <p>
+                In some keyboards, a plate is an optional component. It goes on top of the PCB and holds switches in place and adds overall rigidity to the build. 
+                There are many different materials that a plate can be made of- aluminum, brass, polycarbonate, POM plastic, etc. Different materials have
+                different stiffness, so depending on your plate choice you can select how soft or firm your typing experience is. 
+            </p>
+            <img class="guideImg2" src="\static\photos\stabilizers.jpg">
+            <p>
+                Stabilizers are used for larger keys like the spacebar, enter, and shift keys to prevent those larger keys from wobbling when 
+                you press on them. 
+            </p>
+            <img class="guideImg2" src="\static\photos\switches.jpg">
+            <p>
+                Switches are crucial for customizing the feel and sound of your keyboard. 
+                There are so many different switch types out there but they are mostly broken down into three different categories: linear, clicky, and tactile.
+            </p>
+            <img class="guideImg2" src="\static\photos\gmkkeycaps.jpg">
+            <p>
+                This part really sets the aesthetic for your board. When you sit down to type, you’ll be 
+                interacting with the keycaps the most. The profile, design, and durability of the keycaps is really important.
+            </p>
+        </div>
+    </body>
+</html>

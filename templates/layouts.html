@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'style.css') }}" type= "text/css"/>
+        <script>
+            function confirmDelete() {
+                let confirmDelete = confirm("Are you sure you want to delete this build?");
+                if (confirmDelete) {
+                    return true;
+                }
+                else {  
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <!-- Navigation bar--> 
+        <nav class="navbar">
+        <div class="logo">
+            <a href="{{ url_for('home') }}">Custom Keyboards</a>
+        </div>
+        <ul class="navlinks">
+            <div class="menu">
+                <li class="guides">
+                    <a href="{{ url_for('guides') }}">Guides</a>
+                    <ul class="dropdown">
+                        <li><a href="{{ url_for('gettingStarted') }}">Getting Started</a></li>
+                        <li><a href="{{ url_for('layouts') }}">Layouts</a></li>
+                        <li><a href="{{ url_for('parts') }}">Parts of a Keyboard</a></li>
+                        <li><a href="{{ url_for('switches') }}">Switches</a></li>
+                        <li><a href="{{ url_for('modifications') }}">Extra Modifications</a></li>
+                    </ul>
+                </li>
+                
+                <li class="builds">
+                    <a href="{{ url_for('builds') }}">Builds</a>
+                    <ul class="dropdown">
+                        <li><a href="{{ url_for('builds') }}">My Builds</a></li>
+                        <li><a href="{{ url_for('sample') }}">Sample Build</a></li>
+                        <li><a href="{{ url_for('create') }}">Create a Build</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{ url_for('productSearch') }}">Product Search</a></li>
+            </div>
+        </ul>
+        </nav>
+
+        <!-- Page Content -->
+        <div class="body">
+            <h1>Keyboard Layouts</h1>
+            <img class="guideImg2" src="\static\photos\fullsize.jpg">
+            <p>
+                For the most part, people use 100% size keyboards. These keyboards are divided into four parts: a numeric keypad, arrow keys, the main key area, and the Function area. 
+                A full-sized keyboard has the benefit of meeting a wider range of workplace requirements. Data entry and computations are made more efficient with a Numpad. 
+                A full-sized keyboard has its drawback of taking up more space and being less portable.
+            </p>
+            <img class="guideImg2" src="\static\photos\tkl.jpg">
+            <p>
+                One of the more famous keyboard sizes is the 80% layout or better known as the Tenkeyless (TKL) keyboard thanks to the elimination of the numeric keypad. 
+                In order to dramatically condense the keyboard size, this layout completely removes the keypad that most gamers do not use. 
+                This layout is ideal for those who want additional desk space.
+            </p>
+            <img class="guideImg2" src="\static\photos\75.jpg">
+            <p>
+                Another familiar layout is the 75% keyboard since most laptops come with the 84-key configuration. 
+                This layout reduces the number of function keys, but still retains the directional keys along with the F-keys. The 75% layout, on the other,  
+                shrinks the keyboard even further to boost mobility and increase deskspace.
+            </p>
+            <img class="guideImg2" src="\static\photos\65.jpg">
+            <p>
+                The 65-key layout compresses the keys even further, resulting in a smaller keyboard. 
+                The F-function keys and numeric keypad were omitted, and those functionalities were replaced with combinations of other keys. 
+                The most often used function keys and directional arrow keys were kept. The smaller keyboard frees up more workspace and allows you to focus more on typing.
+            </p>
+            <img class="guideImg2" src="\static\photos\60.jpg">
+            <p>
+                The 60% size keyboard is even more compact. Retaining only the number bar and alphabetical keys, the 60% size gives priority to the typing experience by eliminating the underutilized keys. 
+                The use of function keys or arrow keys is still present in some thanks to a combination of keys. 
+                This is ideal for individuals who ought to streamline their space and requirement typing for long periods of time. 
+                The 60% size keyboard is also very famous in the FPS scene as it conserves space, especially for vertical keyboard users.
+            </p>
+        </div>
+    </body>
+</html>

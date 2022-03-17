@@ -12,11 +12,16 @@ def shopping_search(term):
 
     search = GoogleSearch(params)
     results = search.get_dict()
+    print(results)
+    if 'error' in results:
+        print("ERROR", results['error'])
+        return 0
     shopping_results = results['shopping_results']
 
     with open(term + " result.json", "w") as outfile:
         json.dump(shopping_results, outfile)
         
+    return 1
 
 if __name__ == "__main__":
     shopping_search(sys.argv[1])

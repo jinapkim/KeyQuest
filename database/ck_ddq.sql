@@ -10,7 +10,15 @@ VALUES('KBDFans Tofu60 Aluminum 60% Case- Black'),
 ('Think 6.5 V2 Polycarbonate'),
 ('Vega- Blue'),
 ('NK65- Entry Edition- N65 Purple'),
-('Keychron K2');
+('Keychron K2'),
+('GMMK Pro- White Ice'),
+('RK Royal Kludge RK61'),
+('Drop CTRL'),
+('GK68'),
+('EPOMAKER EP84'),
+('Womier K66'),
+('KBD67 Lite- Transparent Deep Blue');
+
 
 -- -------------------------------------------------------------------------
 
@@ -89,7 +97,12 @@ INSERT INTO Keycaps(keycapName) VALUES
 ('Tai-Hao PBT Double Shot- Dark Gray/Black'),
 ('NP PBT Blank Keycaps'), 
 ('NP PBT Crayon Milky White'), 
-('YDMK Rainbow Carbon Sunset');
+('YDMK Rainbow Carbon Sunset'),
+('Drop Skylight Series- Rose'),
+('Apollo Aerospace PBT'),
+('Green XDA'),
+('XDA Canvas');
+
 
 -- -------------------------------------------------------------------------
 

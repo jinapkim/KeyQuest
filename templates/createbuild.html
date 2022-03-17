@@ -7,10 +7,11 @@
     <body>
         <!-- Navigation bar--> 
         <nav class="navbar">
-        <div class="logo">Custom Keyboards</div>
+        <div class="logo">
+            <a href="{{ url_for('home') }}">Custom Keyboards</a>
+        </div>
         <ul class="navlinks">
             <div class="menu">
-                <li><a href="{{ url_for('home') }}">Home</a></li>
                 <li class="guides">
                     <a href="{{ url_for('guides') }}">Guides</a>
                     <ul class="dropdown">
@@ -25,6 +26,7 @@
                 <li class="builds">
                     <a href="{{ url_for('builds') }}">Builds</a>
                     <ul class="dropdown">
+                        <li><a href="{{ url_for('builds') }}">My Builds</a></li>
                         <li><a href="{{ url_for('sample') }}">Sample Build</a></li>
                         <li><a href="{{ url_for('create') }}">Create a Build</a></li>
                     </ul>
@@ -37,43 +39,52 @@
         <!-- Page content -->
         <div class="body">
             <h1>Add a build</h1>
-            <form method="POST">
+            <form method="POST" action="{{ url_for('builds') }}">
+                <label for="build_name">Name of build:</label>
+                <input type="text" name="build_name" pattern="[a-zA-Z0-9_ ]+">
+                <br>
                 <label for="case">Case</label>
                 <select name="case">
+                    <option disabled selected value></option>
                     {% for case in cases %}
-                    <option value="{{ case.caseName }}">{{ case.caseName }}</option>
+                    <option value="{{ case.caseID }}">{{ case.caseName }}</option>
                     {% endfor %}
                 </select>
                 <br>
                 <label for="pcb">PCB</label>
                 <select name="pcb">
+                    <option disabled selected value></option>
                     {% for pcb in pcbs %}
-                    <option value="{{ pcb.pcbType }}">{{ pcb.pcbType }}</option>
+                    <option value="{{ pcb.pcbID }}">{{ pcb.pcbType }}</option>
                     {% endfor %}
                 </select>
                 <br>
                 <label for="plate">Plate</label>
                 <select name="plate">
+                    <option disabled selected value></option>
                     {% for plate in plates %}
-                    <option value="{{ plate.material }}">{{ plate.material }}</option>
+                    <option value="{{ plate.plateID }}">{{ plate.material }}</option>
                     {% endfor %}
                 </select>
                 <br>
                 <label for="switches">Switches</label>
                 <select name="switches">
+                    <option disabled selected value></option>
                     {% for switch in switches %}
-                    <option value="{{ switch.switchName }}">{{ switch.switchName }}</option>
+                    <option value="{{ switch.switchID }}">{{ switch.switchName }}</option>
                     {% endfor %}
                 </select>
                 <br>
                 <label for="keycaps">Keycaps</label>
                 <select name="keycaps">
+                    <option disabled selected value></option>
                     {% for keycap in keycaps %}
-                    <option value="{{ keycap.keycapName }}">{{ keycap.keycapName }}</option>
+                    <option value="{{ keycap.keycapID }}">{{ keycap.keycapName }}</option>
                     {% endfor %}
                 </select>
+                <br>
+                <input class="button" type="submit" name="add" value="Submit">
             </form>
-            <input class="button" type="submit" value="Submit">
         </div>
     </body>
 </html>

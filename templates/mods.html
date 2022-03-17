@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'style.css') }}" type= "text/css"/>
+        <script>
+            function confirmDelete() {
+                let confirmDelete = confirm("Are you sure you want to delete this build?");
+                if (confirmDelete) {
+                    return true;
+                }
+                else {  
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <!-- Navigation bar--> 
+        <nav class="navbar">
+        <div class="logo">
+            <a href="{{ url_for('home') }}">Custom Keyboards</a>
+        </div>
+        <ul class="navlinks">
+            <div class="menu">
+                <li class="guides">
+                    <a href="{{ url_for('guides') }}">Guides</a>
+                    <ul class="dropdown">
+                        <li><a href="{{ url_for('gettingStarted') }}">Getting Started</a></li>
+                        <li><a href="{{ url_for('layouts') }}">Layouts</a></li>
+                        <li><a href="{{ url_for('parts') }}">Parts of a Keyboard</a></li>
+                        <li><a href="{{ url_for('switches') }}">Switches</a></li>
+                        <li><a href="{{ url_for('modifications') }}">Extra Modifications</a></li>
+                    </ul>
+                </li>
+                
+                <li class="builds">
+                    <a href="{{ url_for('builds') }}">Builds</a>
+                    <ul class="dropdown">
+                        <li><a href="{{ url_for('builds') }}">My Builds</a></li>
+                        <li><a href="{{ url_for('sample') }}">Sample Build</a></li>
+                        <li><a href="{{ url_for('create') }}">Create a Build</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{ url_for('productSearch') }}">Product Search</a></li>
+            </div>
+        </ul>
+        </nav>
+
+        <!-- Page Content -->
+        <div class="body">
+            <img class="guideImg2" src="\static\photos\cable.jpg">
+            <p>
+                If your keyboard allows its cable to be detached, you can use a custom cable instead. Cables can either be straight or coiled, and 
+                there are many color options and different connectors. 
+            </p>
+            <img class="guideImg2" src="\static\photos\foam.jpg">
+            <p>
+                If you want to dampen the loudness of your keyboard, or if you have a metal case that sounds hollow or pings, 
+                you can use a foam cut out and place it at the bottom of the case underneath the PCB. You can also install foam 
+                in between the plate and the PCB to change the way your keyboard feels and sounds. There are various foam materials 
+                you can use and generally the thicker the foam, the more dampened the sound of your keyboard will be.
+            </p>
+        </div>
+    </body>
+</html>
